@@ -51,6 +51,9 @@ public class Student {
 		this.phone = phone;
 		this.dob = dob;
 	}
+	public Student() {
+	
+	}
 	
 	
 	
