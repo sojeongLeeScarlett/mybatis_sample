@@ -10,6 +10,11 @@
 			<if test="studId!=null">stud_id = #{studId}</if>
 		</where>
 	</sql>
+	<sql id="insertSql">
+		insert into student(stud_id,name,email,phone,dob)
+		values(#{studId},#{name},#{email},#{phone},#{dob})
+	</sql>
+	
 	<select id="selectStudentByNo" parameterType="Student" resultType="Student">
 		<include refid="selectSql"></include>
 		<include refid="whereSql"></include>
@@ -19,4 +24,22 @@
 		<include refid="selectSql"></include>
 		<!-- SELECT stud_id, name, email, phone FROM student; -->
 	</select>
+	
+	<select id="selectStudentByNoWithAPI" parameterType="Student" resultType="Student">
+		<include refid="selectSql"></include>
+		<include refid="whereSql"></include>
+	</select>
+	
+	<select id="selectStudentByAllWithAPI" resultType="Student">
+		<include refid="selectSql"></include>
+	</select>
+	
+	<insert id="insertStudent">
+		<include refid="insertSql"></include>
+	</insert>
+	
+	<insert id="insertStudentWithAPI">
+		<include refid="insertSql"></include>
+	</insert>
+	
 </mapper>
