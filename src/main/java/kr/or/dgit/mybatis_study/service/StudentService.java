@@ -51,7 +51,7 @@ public class StudentService {
 	public int  updateStudent(Student student) {
 		SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();
 		
-		log.debug("insertStudent()");
+		log.debug("updateStudent()");
 		try{	
 			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
 			int res = studentDao.updateStudent(student);
@@ -71,7 +71,7 @@ public class StudentService {
 	public int deleteStudent(int id) {
 		SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();
 		
-		log.debug("insertStudent()");
+		log.debug("deleteStudent()");
 		try{	
 			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
 			int res = studentDao.deleteStudent(id);
