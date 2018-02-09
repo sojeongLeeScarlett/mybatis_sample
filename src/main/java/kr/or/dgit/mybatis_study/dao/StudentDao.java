@@ -11,4 +11,5 @@ public interface StudentDao {
 	List<Student> selectStudentByAllWithAPI();
 
 	int insertStudentwithAPI(Student student);
+	int updateStudentwithAPI(Student student);
 }

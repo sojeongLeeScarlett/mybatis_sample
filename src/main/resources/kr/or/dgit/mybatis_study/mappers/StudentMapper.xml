@@ -14,6 +14,13 @@
 		insert into student(stud_id,name,email,phone,dob)
 		values(#{studId},#{name},#{email},#{phone},#{dob})
 	</sql>
+	<sql id="updateSql">
+		update student set name=#{name},email=#{email},phone=#{phone},dob={dob}
+		where stud_id=#{studId}
+	</sql>
+	<sql id="deleteSql">
+		delete from student where stud_id=#{studId}
+	</sql>
 	
 	
 	<select id="selectStudentByNoWithAPI" parameterType="Student" resultType="Student">
@@ -30,5 +37,13 @@
 	<insert id="insertStudentWithAPI">
 		<include refid="insertSql"></include>
 	</insert>
+	
+	<update id="">
+		<include refid="updateSql"></include>
+	</update>
+	
+	<delete id="">
+		<include refid="deleteSql"></include>
+	</delete>
 	
 </mapper>
