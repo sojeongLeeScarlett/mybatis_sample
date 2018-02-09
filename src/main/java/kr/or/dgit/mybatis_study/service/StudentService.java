@@ -51,8 +51,8 @@ public class StudentService {
 		SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();
 		log.debug("updateStudentWithAPI()");
 		try{	
-			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
-			int res = studentDao.updateStudentWithAPI(student);
+			
+			int res = sqlSession.update(namespace+"updateStudentWithAPI", student);
 			sqlSession.commit();
 			return res;	
 		}catch (Exception e) {
@@ -70,8 +70,8 @@ public class StudentService {
 		SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();
 		log.debug("deleteStudentWithAPI()");
 		try{	
-			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
-			int res = studentDao.deleteStudentWithAPI(id);
+			
+			int res = sqlSession.delete(namespace+"deleteStudentWithAPI", id);
 			sqlSession.commit();
 			return res;	
 		}catch (Exception e) {
