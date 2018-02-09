@@ -15,7 +15,7 @@
 		values(#{studId},#{name},#{email},#{phone},#{dob})
 	</sql>
 	<sql id="updateSql">
-		update student set name=#{name},email=#{email},phone=#{phone},dob={dob}
+		update student set name=#{name},email=#{email},phone=#{phone},dob=#{dob}
 		where stud_id=#{studId}
 	</sql>
 	<sql id="deleteSql">
@@ -38,11 +38,11 @@
 		<include refid="insertSql"></include>
 	</insert>
 	
-	<update id="">
+	<update id="updateStudentWithAPI">
 		<include refid="updateSql"></include>
 	</update>
 	
-	<delete id="">
+	<delete id="deleteStudentWithAPI">
 		<include refid="deleteSql"></include>
 	</delete>
 	

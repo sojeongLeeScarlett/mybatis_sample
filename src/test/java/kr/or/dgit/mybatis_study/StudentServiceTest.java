@@ -1,7 +1,6 @@
 package kr.or.dgit.mybatis_study;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -59,9 +58,29 @@ public class StudentServiceTest {
 	public void test5insertStudentWithAPI() {
 		Calendar newDate = GregorianCalendar.getInstance();
 		newDate.set(1990, 2,28);
-		Student student = new Student(4, "홍길동4", "lee@test.co.kr", new PhoneNumber("010-1234-1234"), newDate.getTime());
+		Student student = new Student(3, "홍길동4", "lee@test.co.kr", new PhoneNumber("010-1234-1234"), newDate.getTime());
 		int res = service.insertStudentWithAPI(student);
 		Assert.assertEquals(1, res);
 	}
+	
+	@Test
+	public void test6updateStudentWithAPI() {
+		Student student = new Student();
+		student.setStudId(1);
+		student.setName("Timothy");
+		student.setEmail("timothy@gmail.com");
+		student.setPhone(new PhoneNumber("123-123-1234"));
+		student.setDob(new GregorianCalendar(1988,04,25).getTime());
+		int result = service.updateStudentWithAPI(student);
+		Assert.assertSame(1, result);
+	}
+	
+	@Test
+	public void test7deleteStudentWithAPI() {
+		 int deleteStudent = service.deleteStudentWithAPI(3);
+		 Assert.assertSame(1, deleteStudent);
+	}
+	
+	
 
 }
