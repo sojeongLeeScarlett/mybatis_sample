@@ -15,15 +15,6 @@
 		values(#{studId},#{name},#{email},#{phone},#{dob})
 	</sql>
 	
-	<select id="selectStudentByNo" parameterType="Student" resultType="Student">
-		<include refid="selectSql"></include>
-		<include refid="whereSql"></include>
-		<!-- SELECT stud_id, name, email, phone FROM student where stud_id = #{studId}; -->
-	</select>
-	<select id="selectStudentByAll" resultType="Student">
-		<include refid="selectSql"></include>
-		<!-- SELECT stud_id, name, email, phone FROM student; -->
-	</select>
 	
 	<select id="selectStudentByNoWithAPI" parameterType="Student" resultType="Student">
 		<include refid="selectSql"></include>
@@ -34,9 +25,7 @@
 		<include refid="selectSql"></include>
 	</select>
 	
-	<insert id="insertStudent">
-		<include refid="insertSql"></include>
-	</insert>
+	
 	
 	<insert id="insertStudentWithAPI">
 		<include refid="insertSql"></include>
