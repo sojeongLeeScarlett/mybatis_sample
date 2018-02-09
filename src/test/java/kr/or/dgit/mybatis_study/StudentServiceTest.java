@@ -1,5 +1,7 @@
 package kr.or.dgit.mybatis_study;
 
+import java.util.List;
+
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -30,6 +32,16 @@ public class StudentServiceTest {
 		
 		Student selectStudent = service.findStudentByNo(student);
 		Assert.assertEquals(student.getStudId(), selectStudent.getStudId());
+	}
+	
+	@Test
+	public void test2FindStudentByAll() {
+		List<Student> listStd = service.findStudentByAll();
+		
+		Assert.assertNotNull(listStd);
+		for(Student std:listStd) {
+			System.out.println(std);
+		}
 	}
 
 }
