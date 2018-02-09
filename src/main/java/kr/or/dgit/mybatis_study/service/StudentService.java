@@ -2,6 +2,8 @@ package kr.or.dgit.mybatis_study.service;
 
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
@@ -45,5 +47,47 @@ public class StudentService {
 		}
 		return res;
 	}
+	
+	public int  updateStudent(Student student) {
+		SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();
+		
+		log.debug("insertStudent()");
+		try{	
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			int res = studentDao.updateStudent(student);
+			sqlSession.commit();
+			return res;	
+		}catch (Exception e) {
+			sqlSession.rollback();
+			e.printStackTrace();
+			throw new RuntimeException(e.getCause());
+		}finally {
+			sqlSession.close();
+			
+		}
+		
+	}
+	
+	public int deleteStudent(int id) {
+		SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();
+		
+		log.debug("insertStudent()");
+		try{	
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			int res = studentDao.deleteStudent(id);
+			sqlSession.commit();
+			return res;	
+		}catch (Exception e) {
+			sqlSession.rollback();
+			e.printStackTrace();
+			throw new RuntimeException(e.getCause());
+		}finally {
+			sqlSession.close();
+			
+		}
+		
+	}
+	
+	
 
 }

@@ -63,6 +63,25 @@ public class StudentServiceTest {
 		Assert.assertEquals(1, res);
 	}
 	
+
+	@Test
+	public void test6updateStudent() {
+		Student student = new Student();
+		student.setStudId(1);
+		student.setName("Timothy");
+		student.setEmail("test@test.co.kr");
+		student.setPhone(new PhoneNumber("987-654-3211"));
+		student.setDob(new Date());
+		int result = service.updateStudent(student);
+		Assert.assertEquals(1, result);
+	}
+	
+	@Test
+	public void test7deleteStudent() {
+		int deleteStudent = service.deleteStudent(3);
+		Assert.assertSame(1, deleteStudent);
+	}
+	
 	
 
 }
