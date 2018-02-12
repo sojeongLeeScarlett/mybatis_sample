@@ -8,6 +8,15 @@ public class Student {
 	private String email;
 	private PhoneNumber phone;
 	private Date dob;
+	private Address address;
+	
+	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	public int getStudId() {
 		return studId;
 	}
@@ -40,8 +49,8 @@ public class Student {
 	}
 	@Override
 	public String toString() {
-		return String.format("Student [studId=%s, name=%s, email=%s, phone=%s, dob=%s]", studId, name, email, phone,
-				dob);
+		return String.format("Student [studId=%s, name=%s, email=%s, phone=%s, dob=%s, address=%s]", studId, name,
+				email, phone, dob, address);
 	}
 	public Student(int studId, String name, String email, PhoneNumber phone, Date dob) {
 		super();
@@ -50,6 +59,12 @@ public class Student {
 		this.email = email;
 		this.phone = phone;
 		this.dob = dob;
+	}
+	
+	
+	public Student(int studId) {
+
+		this.studId = studId;
 	}
 	public Student() {
 	

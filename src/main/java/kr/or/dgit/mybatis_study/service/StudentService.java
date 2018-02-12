@@ -47,6 +47,14 @@ public class StudentService {
 		}
 	}
 	
+	public Student selectStudentByNoForResultMapExtendsWithAPI(Student student) {
+		log.debug("selectStudentByNoForResultMapExtendsWithAPI()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			
+			return sqlSession.selectOne(namespace+"selectStudentByNoForResultMapExtendsWithAPI", student);
+		}
+	}
+	
 	
 	
 	public int insertStudentWithAPI(Student student) {

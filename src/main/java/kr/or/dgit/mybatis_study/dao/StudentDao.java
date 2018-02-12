@@ -13,6 +13,8 @@ public interface StudentDao {
 	
 	List<Student> selectStudentByAllForResultMapWithAPI();
 	List<Map<String, Object>> selectStudentByAllForHashMapWithAPI();
+	
+	Student selectStudentByNoForResultMapExtendsWithAPI(Student student);
 
 	int insertStudentwithAPI(Student student);
 	int updateStudentWithAPI(Student student);

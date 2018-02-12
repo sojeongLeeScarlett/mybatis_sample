@@ -98,6 +98,13 @@ public class StudentServiceTest {
 		}
 	}
 	@Test
+	public void test9selectStudentByNoForResultMapExtendsWithAPI() {
+		
+		Student searchStd = service.selectStudentByNoForResultMapExtendsWithAPI(new Student(1));
+		Assert.assertNotNull(searchStd);
+	}
+	
+	@Test
 	public void test7deleteStudentWithAPI() {
 		 int deleteStudent = service.deleteStudentWithAPI(3);
 		 Assert.assertSame(1, deleteStudent);

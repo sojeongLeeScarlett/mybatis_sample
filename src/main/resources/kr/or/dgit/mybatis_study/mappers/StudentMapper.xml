@@ -59,6 +59,25 @@
 		<result property="dob" column="dob"/>
 	</resultMap>
 	
+	<resultMap id="StudentWithAddressResult" type="Student" extends="StudentResult">
+		<result property="address.addrId" column="addr_id"/>
+		<result property="address.street" column="street"/>
+		<result property="address.city" column="city"/>
+		<result property="address.state" column="state"/>
+		<result property="address.zip" column="zip"/>
+		<result property="address.country" column="country"/>
+	</resultMap>
+	
+	<sql id="selectJoinAddressSql">
+		Select stud_id,name,phone,a.addr_id,street,city,state,zip,country from student s LEFT OUTER JOIN addresses a on s.addr_id = a.addr_id
+	</sql>
+	
+	<select id="selectStudentByNoForResultMapExtendsWithAPI" parameterType="Student"
+		resultMap="StudentWithAddressResult">
+			<include refid="selectJoinAddressSql"/>
+			<include refid="whereSql"></include>
+	</select>
+	
 	<select id="selectStudentByAllForResultMapWithAPI" resultMap="StudentResult">
 		<include refid="selectSql2"></include>
 	</select>
