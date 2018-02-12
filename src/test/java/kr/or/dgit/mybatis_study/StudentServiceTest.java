@@ -79,8 +79,8 @@ public class StudentServiceTest {
 	public void test6selectStudentByAllForResultMapWithAPI() {
 		
 		List<Student> listStds = service.findStudentByAllWithAPI();
-		List<Student> listStd = service.selectStudentByAllForResultMapWithAPI();
-		Assert.assertEquals(listStds,listStd);
+		List<Student> listStds2 = service.selectStudentByAllForResultMapWithAPI();
+		Assert.assertSame(listStds.size(),listStds2.size());
 	}
 	
 	@Test
