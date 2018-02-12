@@ -1,12 +1,11 @@
 package kr.or.dgit.mybatis_study.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
-
-import kr.or.dgit.mybatis_study.dao.StudentDao;
 
 import kr.or.dgit.mybatis_study.dto.Student;
 import kr.or.dgit.mybatis_study.util.MyBatisSqlSessionFactory;
@@ -37,6 +36,14 @@ public class StudentService {
 		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
 			
 			return sqlSession.selectList(namespace+"selectStudentByAllForResultMapWithAPI");
+		}
+	}
+	
+	public List<Map<String, Object>> selectStudentByAllForHashMapWithAPI(){
+		log.debug("selectStudentByAllForHashMapWithAPI()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			
+			return sqlSession.selectList(namespace+"selectStudentByAllForHashMapWithAPI");
 		}
 	}
 	

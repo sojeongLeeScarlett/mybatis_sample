@@ -3,6 +3,8 @@ package kr.or.dgit.mybatis_study;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -83,6 +85,18 @@ public class StudentServiceTest {
 		Assert.assertSame(listStds.size(),listStds2.size());
 	}
 	
+	@Test
+	public void test8selectStudentByAllForHashMapWithAPI() {
+		List<Map<String, Object>> listMaps = service.selectStudentByAllForHashMapWithAPI();
+		List<Student> listStds2 = service.findStudentByAllWithAPI();
+		Assert.assertSame(listMaps.size(), listStds2.size());
+		
+		for(Map<String, Object> map :listMaps) {
+			for(Entry<String, Object> e :map.entrySet()) {
+				System.out.printf("key(%s) => value(%s)%n", e.getKey(), e.getValue());
+			}
+		}
+	}
 	@Test
 	public void test7deleteStudentWithAPI() {
 		 int deleteStudent = service.deleteStudentWithAPI(3);

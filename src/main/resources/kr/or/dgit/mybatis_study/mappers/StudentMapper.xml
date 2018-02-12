@@ -63,4 +63,8 @@
 		<include refid="selectSql2"></include>
 	</select>
 	
+	<select id="selectStudentByAllForHashMapWithAPI" resultType="map">
+		<include refid="selectSql2"></include>
+	</select>
+	
 </mapper>
