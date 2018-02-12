@@ -91,6 +91,9 @@
 		<association property="address" resultMap="kr.or.dgit.mybatis_study.dao.AddressDao.AddressResult"/>
 	</resultMap>
 	
-	<select id=""></select>
+	<select id="selectStudentByNoAssociation" parameterType="Student" resultMap="StudentAssociation">
+		<include refid="selectJoinAddressSql"/>
+			<include refid="whereSql"></include>
+	</select>
 	
 </mapper>

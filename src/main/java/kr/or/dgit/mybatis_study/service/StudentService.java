@@ -3,14 +3,11 @@ package kr.or.dgit.mybatis_study.service;
 import java.util.List;
 import java.util.Map;
 
-import javax.management.RuntimeErrorException;
-
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
 
 import kr.or.dgit.mybatis_study.dao.StudentDao;
-
 import kr.or.dgit.mybatis_study.dto.Student;
 import kr.or.dgit.mybatis_study.util.MyBatisSqlSessionFactory;
 
