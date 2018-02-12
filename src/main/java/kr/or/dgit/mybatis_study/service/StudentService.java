@@ -105,6 +105,22 @@ public class StudentService {
 		}
 	}
 	
+	public Student selectStudentByNoForResultMapExtends(Student student) {
+		log.debug("selectStudentByNoForResultMapExtends()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			return studentDao.selectStudentByNoForResultMapExtends(student);
+		}
+	}
+	
+	public Student selectStudentByNoAssociation(Student student) {
+		log.debug("selectStudentByNoForResultMapExtends()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			return studentDao.selectStudentByNoAssociation(student);
+		}
+	}
+	
 	
 
 }
