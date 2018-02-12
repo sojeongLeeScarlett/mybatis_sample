@@ -78,10 +78,10 @@ public class StudentServiceTest {
 	
 	
 	@Test
-	public void test6selectStudentByAllForResultMap() {
+	public void test8selectStudentByAllForResultMap() {
 		List<Student> lists = service.findStudentByAll();
-		List<Student> listsAPI = service.selectStudentByAllForResultMap();
-		Assert.assertEquals(listsAPI, lists);
+		List<Student> lists2 = service.selectStudentByAllForResultMap();
+		Assert.assertSame(lists.size(),lists2.size());
 	}
 	
 	@Test
