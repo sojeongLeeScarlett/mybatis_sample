@@ -46,4 +46,21 @@
 		<include refid="deleteSql"></include>
 	</delete>
 	
+	<sql id="selectSql2">
+		SELECT stud_id, name, email, phone,dob FROM student
+	</sql>
+	
+	<!-- resultmap -->
+	<resultMap type="StudentResult" id="Student">
+		<id property="studId" column="stud_td"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="phone" column="phone"/>
+		<result property="dob" column="dob"/>
+	</resultMap>
+	
+	<select id="selectStudentByAllForResultMapWithAPI" resultMap="StudentResult">
+		<include refid="selectSql2"></include>
+	</select>
+	
 </mapper>
