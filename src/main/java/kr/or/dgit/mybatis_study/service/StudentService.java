@@ -92,7 +92,7 @@ public class StudentService {
 		log.debug("selectStudentByAllForResultMap()");
 		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
 			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
-			return studentDao.selectStudentByAll();
+			return studentDao.selectStudentByAllForResultMap();
 		}
 		
 	}
