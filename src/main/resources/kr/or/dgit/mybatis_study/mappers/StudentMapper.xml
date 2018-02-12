@@ -47,11 +47,11 @@
 	</delete>
 	
 	<sql id="selectSql2">
-		SELECT stud_id, name, email, phone,dob FROM student
+		SELECT stud_id, name, email, phone, dob FROM student
 	</sql>
 	
 	<!-- resultmap -->
-	<resultMap type="StudentResult" id="Student">
+	<resultMap id="StudentResult" type="Student">
 		<id property="studId" column="stud_td"/>
 		<result property="name" column="name"/>
 		<result property="email" column="email"/>

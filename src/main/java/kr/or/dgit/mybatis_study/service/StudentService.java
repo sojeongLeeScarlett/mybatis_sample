@@ -33,10 +33,10 @@ public class StudentService {
 	}
 	
 	public List<Student> selectStudentByAllForResultMapWithAPI(){
-		log.debug(" selectStudentByAllForResultMapWithAPI()");
+		log.debug("selectStudentByAllForResultMapWithAPI()");
 		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
 			
-			return sqlSession.selectList(namespace+" selectStudentByAllForResultMapWithAPI()");
+			return sqlSession.selectList(namespace+"selectStudentByAllForResultMapWithAPI()");
 		}
 	}
 	
