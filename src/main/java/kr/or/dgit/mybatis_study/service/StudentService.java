@@ -88,6 +88,15 @@ public class StudentService {
 		
 	}
 	
+	public List<Student> selectStudentByAllForResultMap(){
+		log.debug("selectStudentByAllForResultMap()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			return studentDao.selectStudentByAll();
+		}
+		
+	}
+	
 	
 
 }
