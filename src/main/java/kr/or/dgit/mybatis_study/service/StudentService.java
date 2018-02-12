@@ -55,6 +55,14 @@ public class StudentService {
 		}
 	}
 	
+	public Student selectStudentByNoAssociationWithAPI(Student student) {
+		log.debug("selectStudentByNoAssociationWithAPI()");
+try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			
+			return sqlSession.selectOne(namespace+"selectStudentByNoAssociationWithAPI", student);
+		}
+	}
+	
 	
 	
 	public int insertStudentWithAPI(Student student) {

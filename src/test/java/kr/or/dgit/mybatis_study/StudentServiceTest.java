@@ -104,6 +104,18 @@ public class StudentServiceTest {
 		Assert.assertNotNull(searchStd);
 	}
 	
+	
+	
+	@Test
+	public void test11selectStudentByNoAssociationWithAPI() {
+		Student student = new Student();
+		student.setStudId(1);
+		Student extStd = service.findStudentByNoWithAPI(student);
+		Student extStd2 = service.selectStudentByNoAssociationWithAPI(student);
+		Assert.assertEquals(extStd.getStudId(),extStd2.getStudId());
+		
+	}
+	
 	@Test
 	public void test7deleteStudentWithAPI() {
 		 int deleteStudent = service.deleteStudentWithAPI(3);

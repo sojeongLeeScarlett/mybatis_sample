@@ -86,4 +86,16 @@
 		<include refid="selectSql2"></include>
 	</select>
 	
+	
+	
+	<!-- 내포된 결과매핑(resultMap)을 사용한 일대일 매핑 -->
+	<resultMap type="Student" id="StudentAssociation" extends="StudentResult">
+		<association property="address" resultMap="kr.or.dgit.mybatis_study.dao.AddressDao.AddressResult"/>
+	</resultMap>
+	
+	<select id="selectStudentByNoAssociationWithAPI" parameterType="Student" resultMap="StudentAssociation">
+		<include refid="selectJoinAddressSql"/>
+			<include refid="whereSql"></include>
+	</select>
+	
 </mapper>
