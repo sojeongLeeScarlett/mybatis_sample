@@ -62,6 +62,10 @@
 		<include refid="selectSql2"/>
 	</select>
 	
+	<!-- hashmap 을 이용 -->
+	<select id="selectStudentByAllForHashMap" resultType="map">
+		<include refid="selectSql2"></include>
+	</select>
 	
 	
 	

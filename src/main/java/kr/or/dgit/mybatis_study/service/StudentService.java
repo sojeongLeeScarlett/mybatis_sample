@@ -1,6 +1,7 @@
 package kr.or.dgit.mybatis_study.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.management.RuntimeErrorException;
 
@@ -95,6 +96,13 @@ public class StudentService {
 			return studentDao.selectStudentByAllForResultMap();
 		}
 		
+	}
+	public List<Map<String,Object>> selectStudentByAllForHashMap(){
+		log.debug("selectStudentByAllForHashMap()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			return studentDao.selectStudentByAllForHashMap();
+		}
 	}
 	
 	
