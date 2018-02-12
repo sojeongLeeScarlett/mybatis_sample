@@ -76,6 +76,14 @@ public class StudentServiceTest {
 		Assert.assertEquals(1, result);
 	}
 	
+	
+	@Test
+	public void test8selectStudentByAllForResultMap() {
+		List<Student> lists = service.findStudentByAll();
+		List<Student> lists2 = service.selectStudentByAllForResultMap();
+		Assert.assertSame(lists.size(),lists2.size());
+	}
+	
 	@Test
 	public void test7deleteStudent() {
 		int deleteStudent = service.deleteStudent(3);
