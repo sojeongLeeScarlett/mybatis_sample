@@ -4,7 +4,6 @@ import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
 
-import kr.or.dgit.mybatis_study.dao.StudentDao;
 import kr.or.dgit.mybatis_study.dao.TutorDao;
 import kr.or.dgit.mybatis_study.dto.Tutor;
 import kr.or.dgit.mybatis_study.util.MyBatisSqlSessionFactory;

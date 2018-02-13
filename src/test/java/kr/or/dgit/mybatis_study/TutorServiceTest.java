@@ -35,7 +35,7 @@ public class TutorServiceTest {
 		Tutor findTutor = new Tutor();
 		findTutor.setTutorId(1);
 		Tutor tutor = service.selectTutorByTutorId(findTutor);
-		Assert.assertEquals(tutor.getTutorId(),1);
+		Assert.assertEquals(tutor.getTutorId(),findTutor.getTutorId());
 		
 	}
 
