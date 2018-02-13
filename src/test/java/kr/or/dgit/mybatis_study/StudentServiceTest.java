@@ -132,7 +132,7 @@ public class StudentServiceTest {
 		int res = service.insertEnumStudent(student);
 		Assert.assertEquals(1, res);
 		System.out.println(student);
-		test7deleteStudent();
+		
 	}
 	
 	
