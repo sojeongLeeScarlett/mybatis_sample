@@ -77,6 +77,19 @@ try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().open
 		}
 		return res;
 	}
+	public int insertEnumStudentWithAPI(Student student) {
+		int res = -1;
+		log.debug("insertEnumStudentWithAPI()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			
+			
+			res = sqlSession.insert(namespace+"insertEnumStudentWithAPI",student);
+			sqlSession.commit();
+					
+		}
+		return res;
+	}
+	
 	
 	public int  updateStudentWithAPI(Student student) {
 		SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();

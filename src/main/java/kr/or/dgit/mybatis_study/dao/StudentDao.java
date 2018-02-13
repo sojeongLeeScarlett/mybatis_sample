@@ -19,6 +19,8 @@ public interface StudentDao {
 	Student selectStudentByNoForResultMapExtendsWithAPI(Student student);
 
 	int insertStudentwithAPI(Student student);
+	int insertEnumStudentWithAPI(Student student);
+	
 	int updateStudentWithAPI(Student student);
 	int deleteStudentWithAPI(int id);
 	

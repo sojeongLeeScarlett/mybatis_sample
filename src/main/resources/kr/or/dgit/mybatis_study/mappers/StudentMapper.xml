@@ -38,6 +38,11 @@
 		<include refid="insertSql"></include>
 	</insert>
 	
+	<insert id="insertEnumStudentWithAPI" parameterType="Student">
+		insert into student(stud_id,name,email,phone,dob,gender)
+		values(#{studId},#{name},#{email},#{phone},#{dob},#{gender})
+	</insert>
+	
 	<update id="updateStudentWithAPI">
 		<include refid="updateSql"></include>
 	</update>
