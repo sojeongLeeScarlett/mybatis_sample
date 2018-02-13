@@ -129,7 +129,7 @@ public class StudentServiceTest {
 		newDate.set(1990, 2,28);
 		Student student = new Student(3, "홍길동3", "lee@test.co.kr", new PhoneNumber("010-1234-1234"), newDate.getTime());
 		student.setGender(Gender.FEMALE);
-		int res = service.insertStudent(student);
+		int res = service.insertEnumStudent(student);
 		Assert.assertEquals(1, res);
 		System.out.println(student);
 		test7deleteStudent();
