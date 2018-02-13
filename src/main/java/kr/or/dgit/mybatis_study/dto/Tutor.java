@@ -9,6 +9,12 @@ public class Tutor {
 	private Address address;
 	private List<Course> courses;
 	
+	
+	
+	public Tutor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getTutorId() {
 		return tutorId;
 	}

@@ -1,5 +1,5 @@
 package kr.or.dgit.mybatis_study.dao;
 
-public interface AddressDao {
-	
+public interface CourseDao {
+
 }
