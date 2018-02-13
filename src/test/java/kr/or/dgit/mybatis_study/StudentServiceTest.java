@@ -16,6 +16,7 @@ import org.junit.runners.MethodSorters;
 import kr.or.dgit.mybatis_study.dto.PhoneNumber;
 import kr.or.dgit.mybatis_study.dto.Student;
 import kr.or.dgit.mybatis_study.service.StudentService;
+import kr.or.dgit.mybatis_study.type.Gender;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StudentServiceTest {
@@ -120,6 +121,18 @@ public class StudentServiceTest {
 	public void test7deleteStudent() {
 		int deleteStudent = service.deleteStudent(3);
 		Assert.assertSame(1, deleteStudent);
+	}
+	
+	@Test
+	public void testFinsertEnumStudent() {
+		Calendar newDate = GregorianCalendar.getInstance();
+		newDate.set(1990, 2,28);
+		Student student = new Student(3, "홍길동3", "lee@test.co.kr", new PhoneNumber("010-1234-1234"), newDate.getTime());
+		student.setGender(Gender.FEMALE);
+		int res = service.insertStudent(student);
+		Assert.assertEquals(1, res);
+		System.out.println(student);
+		test7deleteStudent();
 	}
 	
 	

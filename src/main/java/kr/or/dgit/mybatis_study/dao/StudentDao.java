@@ -17,6 +17,7 @@ public interface StudentDao {
 	int updateStudent(Student student);
 	
 	int insertStudent(Student student);
+	int insertEnumStudent(Student student);
 	
 	int deleteStudent(int id);
 	

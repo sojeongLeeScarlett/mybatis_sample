@@ -46,6 +46,20 @@ public class StudentService {
 		return res;
 	}
 	
+	public int insertEnumStudent(Student student) {
+		int res = -1;
+		log.debug("insertEnumStudent()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			res = studentDao.insertEnumStudent(student);
+			sqlSession.commit();
+					
+		}
+		return res;
+	}
+	
+	
 	public int  updateStudent(Student student) {
 		SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();
 		

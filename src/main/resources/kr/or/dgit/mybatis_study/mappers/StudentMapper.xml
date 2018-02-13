@@ -37,6 +37,11 @@
 		<include refid="insertSql"></include>
 	</insert>
 	
+	<insert id="insertEnumStudent" parameterType="Student">
+		insert into student(stud_id,name,email,phone,dob,gender)
+		values(#{studId},#{name},#{email},#{phone},#{dob},#{gender})
+	</insert>
+	
 	<update id="updateStudent">
 		<include refid="updateSql"></include>
 	</update>
@@ -95,5 +100,8 @@
 		<include refid="selectJoinAddressSql"/>
 			<include refid="whereSql"></include>
 	</select>
+	
+	<!-- enum타입 다루기 -->
+	
 	
 </mapper>
