@@ -114,7 +114,7 @@
 			<if test="name != null">
 				name = #{name}
 			</if>
-			<if test="email != email">
+			<if test="email != null">
 				AND email = #{email}
 			</if>
 		</where>
@@ -122,10 +122,10 @@
 	
 	<select id="selectAllStudentByParam" resultMap="StudentGenderResult">
 		<include refid="selectParameterSql"/>
-		where name=#{param1} ane eamil=#{param2}
+		where name=#{param1} and email=#{param2}
 	</select>
 	
-	<select id="selectAllStudentbyStudent" parameterType="Student" resultMap="StudentGenderResult">
+	<select id="selectAllStudentByStudent" parameterType="Student" resultMap="StudentGenderResult">
 		<include refid="selectParameterSql"/>
 		<include refid="whereNameEmailSql"/>
 	</select>

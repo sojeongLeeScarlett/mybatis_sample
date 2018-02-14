@@ -121,7 +121,7 @@ public class StudentServiceTest {
 	
 	@Test
 	public void test12selectAllStudentByParam() {
-		Student student = service.selectAllStudentByParam("Timothy", "timothy@gmail.com");
+		Student student = service.selectAllStudentByParam("Timothy", "test@test.co.kr");
 		Assert.assertNotNull(student);	
 	}
 	
@@ -130,7 +130,7 @@ public class StudentServiceTest {
 	public void test13selectAllStudentByStudent() {
 		Student std = new Student();
 		std.setName("Timothy");
-		std.setEmail("timothy@gmail.com");
+		std.setEmail("test@test.co.kr");
 		Student student = service.selectAllStudentByStudent(std);
 		Assert.assertNotNull(student);
 	}
@@ -139,7 +139,7 @@ public class StudentServiceTest {
 	public void test14selectAllStudentByMap() {
 		Map<String, String> maps = new HashMap<>();
 		maps.put("name", "Timothy");
-		maps.put("email", "timothy@gmail.com");
+		maps.put("email", "test@test.co.kr");
 		Student student = service.selectAllStudentByMap(maps);
 		Assert.assertNotNull(student);
 	}
