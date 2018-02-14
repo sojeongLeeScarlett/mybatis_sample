@@ -18,6 +18,9 @@ public interface StudentDao {
 	Student selectAllStudentByStudentWithAPI(Student student);
 	Student selectAllStudentByMapWithAPI(Map<String, String> map);
 	
+	//ResultSet 처리방식 재정의
+	Map<Integer, String> selectStudentForMap();
+	
 	
 	Student selectStudentByNoForResultMapExtendsWithAPI(Student student);
 
@@ -26,5 +29,8 @@ public interface StudentDao {
 	
 	int updateStudentWithAPI(Student student);
 	int deleteStudentWithAPI(int id);
+	
+	//set
+	int updateSetStudent(Student student);
 	
 }

@@ -35,5 +35,6 @@
     <mapper resource="kr/or/dgit/mybatis_study/mappers/CourseMapper.xml"/>
     <mapper resource="kr/or/dgit/mybatis_study/mappers/TutorMapper.xml"/>
     <mapper resource="kr/or/dgit/mybatis_study/mappers/UserPicMapper.xml"/>
+     <mapper resource="kr/or/dgit/mybatis_study/mappers/CourseMapper.xml"/>
   </mappers>
 </configuration>

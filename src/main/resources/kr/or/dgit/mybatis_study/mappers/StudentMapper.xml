@@ -137,4 +137,22 @@
 		<include refid="whereNameEmailSql"/>
 	</select>
 	
+	<!-- resultset -->
+	<select id="selectStudentForMap" resultMap="StudentGenderResult">
+		<include refid="selectParameterSql"></include>
+	</select>
+	
+	<!-- set조건 -->
+	<update id="updateSetStudent">
+		UPDATE STUDENT
+		<set>
+			<if test="name != null">name=#{name},</if>
+			<if test="email != null">email=#{email},</if>
+			<if test="phone != null">phone=#{phone},</if>
+			<if test="dob != null">dob=#{dob},</if>
+		</set>
+		<include refid="whereSql"/>
+	</update>
+	
+	
 </mapper>

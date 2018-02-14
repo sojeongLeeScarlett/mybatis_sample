@@ -1,6 +1,8 @@
 package kr.or.dgit.mybatis_study;
 
+
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
@@ -140,6 +142,32 @@ public class StudentServiceTest {
 	}
 	
 	@Test
+	public void test15selectStudentForMap() {
+		Map<Integer, String> map = service.selectStudentForMap();
+		Assert.assertNotNull(map);
+		for(Entry<Integer, String> entry : map.entrySet()){
+			
+		}
+	}
+	
+	@Test
+	public void test16updateSetStudent() {
+		Student student = new Student();
+		student.setStudId(1);
+		student.setPhone(new PhoneNumber("987-654-3211"));
+		student.setDob(new Date());
+		
+		int result = service.updateSetStudent(student);
+		Assert.assertSame(1, result);
+		
+		student.setPhone(new PhoneNumber("123-123-1234"));
+		student.setDob(new GregorianCalendar(1988,04,25).getTime());
+		
+		result = service.updateSetStudent(student);
+		Assert.assertSame(1, result);
+	}
+	
+	@Test
 	public void test7deleteStudentWithAPI() {
 		 int deleteStudent = service.deleteStudentWithAPI(3);
 		 Assert.assertSame(1, deleteStudent);
@@ -154,6 +182,8 @@ public class StudentServiceTest {
 		int res = service.insertEnumStudentWithAPI(student);
 		Assert.assertEquals(1, res);
 		System.out.println(student);
+		
+		service.deleteStudentWithAPI(4);
 		
 	}
 	
