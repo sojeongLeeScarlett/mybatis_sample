@@ -19,7 +19,7 @@ public class AddressService {
 		log.debug("selectAddressByAllWithAPI()");
 		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
 			
-			return sqlSession.selectList(namespace+"selectAddressByAllWithAPI",rowbounds);
+			return sqlSession.selectList(namespace+"selectAddressByAllWithAPI",null,rowbounds);
 		}
 	}
 }
