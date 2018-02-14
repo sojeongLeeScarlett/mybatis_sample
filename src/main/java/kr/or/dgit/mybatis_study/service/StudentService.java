@@ -13,7 +13,7 @@ import kr.or.dgit.mybatis_study.util.MyBatisSqlSessionFactory;
 
 public class StudentService {
 	private static final Log log = LogFactory.getLog(StudentService.class);
-	private String namespace ="kr.or.dgit.mybatis_study.dao.StudentDao.";
+	
 
 	public Student findStudentByNo(Student student) {
 		log.debug("selectStudentByNo");
@@ -129,6 +129,28 @@ public class StudentService {
 		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
 			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
 			return studentDao.selectStudentByNoAssociation(student);
+		}
+	}
+	
+	Student selectfindAllStudentByParam(String name,String email) {
+		log.debug("selectAllStudentByParam()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			return studentDao.selectAllStudentByParam(name,email);
+		}
+	}
+	Student selectAllStudentByStudent(Student student) {
+		log.debug("selectAllStudentByStudent()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			return studentDao.selectAllStudentByStudent(student);
+		}
+	}
+	Student selectAllStudentByMap(Map<String, String> map) {
+		log.debug("selectAllStudentByMap()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+			return studentDao.selectAllStudentByMap(map);
 		}
 	}
 	

@@ -116,6 +116,16 @@ public class StudentServiceTest {
 		
 	}
 	
+	@Test
+	public void test12selectAllStudentByParam() {
+		Student student = new Student();
+		student.setStudId(1);
+		Student extStd = service.findStudentByNo(student);
+		Student extStd2 = service.selectStudentByNoAssociation(student);
+		Assert.assertEquals(extStd.getStudId(),extStd2.getStudId());
+		
+	}
+	
 	
 	@Test
 	public void test7deleteStudent() {

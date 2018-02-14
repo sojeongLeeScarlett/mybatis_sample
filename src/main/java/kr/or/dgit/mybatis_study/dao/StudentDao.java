@@ -13,6 +13,9 @@ public interface StudentDao {
 	List<Map<String,Object>> selectStudentByAllForHashMap();
 	Student selectStudentByNoForResultMapExtends(Student student);
 	Student selectStudentByNoAssociation(Student student);
+	Student selectAllStudentByParam(String name,String email);
+	Student selectAllStudentByStudent(Student student);
+	Student selectAllStudentByMap(Map<String, String> map);
 	
 	int updateStudent(Student student);
 	
