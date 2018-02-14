@@ -14,6 +14,9 @@ public interface StudentDao {
 	List<Student> selectStudentByAllForResultMapWithAPI();
 	List<Map<String, Object>> selectStudentByAllForHashMapWithAPI();
 	Student selectStudentByNoAssociationWithAPI(Student student);
+	/*Student selectAllStudentByParam(String name,String email); //API는 파라미터 두개 못받음*/
+	Student selectAllStudentByStudentWithAPI(Student student);
+	Student selectAllStudentByMapWithAPI(Map<String, String> map);
 	
 	
 	Student selectStudentByNoForResultMapExtendsWithAPI(Student student);

@@ -7,6 +7,7 @@ import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
 
+import kr.or.dgit.mybatis_study.dao.StudentDao;
 import kr.or.dgit.mybatis_study.dto.Student;
 import kr.or.dgit.mybatis_study.util.MyBatisSqlSessionFactory;
 
@@ -127,5 +128,20 @@ try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().open
 			
 		}
 		
+	}
+	
+	public Student selectAllStudentByStudentWithAPI(Student student) {
+		log.debug("selectAllStudentByStudentWithAPI()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			return sqlSession.selectOne(namespace+"selectAllStudentByStudentWithAPI", student);
+		}
+		
+	}
+	public Student selectAllStudentByMapWithAPI(Map<String, String> map) {
+		log.debug("selectAllStudentByMapWithAPI()");
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();){
+			
+			return sqlSession.selectOne(namespace+"selectAllStudentByMapWithAPI", map);
+		}
 	}
 }

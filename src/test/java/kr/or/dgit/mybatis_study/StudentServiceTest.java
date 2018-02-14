@@ -2,6 +2,7 @@ package kr.or.dgit.mybatis_study;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -115,6 +116,27 @@ public class StudentServiceTest {
 		Student extStd2 = service.selectStudentByNoAssociationWithAPI(student);
 		Assert.assertEquals(extStd.getStudId(),extStd2.getStudId());
 		
+	}
+	
+	
+	
+	
+	@Test
+	public void test13selectAllStudentByStudentWithAPI() {
+		Student std = new Student();
+		std.setName("Timothy");
+		std.setEmail("timothy@gmail.com");
+		Student student = service.selectAllStudentByStudentWithAPI(std);
+		Assert.assertNotNull(student);
+	}
+	
+	@Test
+	public void test14selectAllStudentByMapWithAPI() {
+		Map<String, String> maps = new HashMap<>();
+		maps.put("name", "Timothy");
+		maps.put("email", "timothy@gmail.com");
+		Student student = service.selectAllStudentByMapWithAPI(maps);
+		Assert.assertNotNull(student);
 	}
 	
 	@Test
