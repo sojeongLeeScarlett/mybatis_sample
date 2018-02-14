@@ -1,8 +1,11 @@
 package kr.or.dgit.mybatis_study;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -118,12 +121,27 @@ public class StudentServiceTest {
 	
 	@Test
 	public void test12selectAllStudentByParam() {
-		Student student = new Student();
-		student.setStudId(1);
-		Student extStd = service.findStudentByNo(student);
-		Student extStd2 = service.selectStudentByNoAssociation(student);
-		Assert.assertEquals(extStd.getStudId(),extStd2.getStudId());
-		
+		Student student = service.selectAllStudentByParam("Timothy", "timothy@gmail.com");
+		Assert.assertNotNull(student);	
+	}
+	
+	
+	@Test
+	public void test13selectAllStudentByStudent() {
+		Student std = new Student();
+		std.setName("Timothy");
+		std.setEmail("timothy@gmail.com");
+		Student student = service.selectAllStudentByStudent(std);
+		Assert.assertNotNull(student);
+	}
+	
+	@Test
+	public void test14selectAllStudentByMap() {
+		Map<String, String> maps = new HashMap<>();
+		maps.put("name", "Timothy");
+		maps.put("email", "timothy@gmail.com");
+		Student student = service.selectAllStudentByMap(maps);
+		Assert.assertNotNull(student);
 	}
 	
 	
