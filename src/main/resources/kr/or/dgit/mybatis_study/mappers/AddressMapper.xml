@@ -17,6 +17,15 @@
 		<include refid="selectSql"/>
 	</select>
 	
+	<sql id="selectLimitSql">
+		select addr_id,street,city,zip,country from addresses
+		limit #{offset},#{limit}
+	</sql>
+	
+	<select id="selectAddressLimitByAll" resultMap="AddressResult" parameterType="map">
+		<include refid="selectLimitSql"/>
+	</select>
+	
 	
 
 </mapper>

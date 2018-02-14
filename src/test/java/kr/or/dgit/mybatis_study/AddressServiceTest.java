@@ -2,7 +2,9 @@ package kr.or.dgit.mybatis_study;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.RowBounds;
 import org.junit.After;
@@ -35,6 +37,17 @@ public class AddressServiceTest {
 	public void test1selectAddressByAll() {
 		RowBounds rowBounds = new RowBounds(0,2);
 		List<Address> lists = service.selectAddressByAll(rowBounds);
+		Assert.assertNotNull(lists);
+		
+	}
+	
+	@Test
+	public void test2selectAddressLimitByAll() {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("offset", 2);
+		map.put("limit", 2);
+	
+		List<Address> lists = service.selectAddressLimitByAll(map);
 		Assert.assertNotNull(lists);
 		
 	}

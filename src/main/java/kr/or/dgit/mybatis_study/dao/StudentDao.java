@@ -17,6 +17,7 @@ public interface StudentDao {
 	Student selectAllStudentByStudent(Student student);
 	Student selectAllStudentByMap(Map<String, String> map);
 	
+	
 	int updateStudent(Student student);
 	
 	int insertStudent(Student student);
